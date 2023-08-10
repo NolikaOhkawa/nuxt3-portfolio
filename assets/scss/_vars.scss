@@ -1,0 +1,46 @@
+// variables
+$sp: 699px;
+$custom-md: 860px; // top seminarのカード
+$md: 1199px;
+
+$primary-100: #faff00;
+$primary-200: #d9e000;
+$primary-300: #d3db00;
+$accent-100: #00f92a;
+$accent-200: #009200;
+$text-100: #ffffff;
+$text-200: #e0e0e0;
+$bg-100: #0400b0;
+$bg-200: #3419c4;
+$bg-300: #5c36e3;
+
+// mixins
+
+@mixin sp {
+  @media (max-width: $sp) {
+    @content;
+  }
+}
+@mixin custom-md {
+  @media (max-width: $custom-md) {
+    @content;
+  }
+}
+@mixin md {
+  @media (max-width: $md) {
+    @content;
+  }
+}
+
+@mixin k-border {
+  border: 1px solid lightgray;
+  border-radius: 4px;
+}
+
+@mixin k-border-debug {
+  border: 1px dotted red;
+  border-radius: 4px;
+}
+
+@import '_global.scss';
+@import '_common.scss';
