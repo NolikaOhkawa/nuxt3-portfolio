@@ -1,7 +1,19 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  // css: ['@/assets/scss/_vars.scss'],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false,
+    },
+  ],
+  css: ['~/assets/css/main.css'],
   vite: {
     css: {
       preprocessorOptions: {
@@ -13,13 +25,9 @@ export default defineNuxtConfig({
   },
   modules: [
     '@nuxtjs/tailwindcss',
-    [
-      // https://nuxt.com/modules/eslint
-      '@nuxtjs/eslint-module',
-      {
-        /* module options */
-      },
-    ],
+    '@nuxtjs/eslint-module', // https://nuxt.com/modules/eslint
+    'nuxt-icon', // https://github.com/nuxt-modules/icon,https://icones.js.org/
+
     // https://nuxt.com/modules/cookie-control
     // [
     //   '@dargmuesli/nuxt-cookie-control',
@@ -48,8 +56,6 @@ export default defineNuxtConfig({
     //   },
     // ],
   ],
-  cookieControl: {
-    // typed module options
-  },
+
   // https://nuxt.com/modules/nuxt-gtm
 });
