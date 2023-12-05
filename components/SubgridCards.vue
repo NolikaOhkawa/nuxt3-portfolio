@@ -1,28 +1,8 @@
 <template>
-  <div class="flex flex-wrap -mx-4">
-    <div
-      v-for="(item, index) in contents"
-      :key="index"
-      class="max-w-xs rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700"
-    >
-      <img :src="item.img" alt="Image" class="rounded-t-lg" />
-      <div class="p-6">
-        <h5
-          class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50"
-        >
-          {{ item.title }}
-        </h5>
-        <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-          <!-- make it this shorter when the DOM is loaded -->
-          {{ item.content }}
-        </p>
-        <div class="tag_area">
-          <CardTag v-for="(tag, index) in item.tag" :key="index" :url="tag.url">
-            {{ tag.name }}
-          </CardTag>
-        </div>
-        <ButtonPrimary>Learn more</ButtonPrimary>
-      </div>
+  <div class="">
+    <!-- <div class="flex flex-wrap -mx-4"> -->
+    <div class="subgridCard_group">
+      <SubgridCard />
     </div>
   </div>
 </template>
@@ -149,3 +129,10 @@ onMounted(() => {
   }
 });
 </script>
+
+<style lang="scss">
+.subgridCard_group {
+  display: flex;
+  justify-content: space-between;
+}
+</style>

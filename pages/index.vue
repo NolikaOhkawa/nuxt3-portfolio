@@ -1,7 +1,6 @@
 <template>
   <div class="top">
     <the-header :active="menuActive" @toggle-menu="toggleMenu"></the-header>
-    <!-- <p class="k-content">lorem ipsum</p> -->
     <section id="fv" class="w-full">
       <div class="w-5/6 mx-auto items-center">
         <div class="fv_box">
@@ -15,10 +14,10 @@
             ...and big food lover.
           </h2>
           <p class="fv_text w-1/2 my-7">
-            I'm Norika, a front-end developer based in California and Tokyo,
-            Japan. I specialize in building Web sites and applications for
-            companies and individuals. I love to create functional websites, and
-            travel, eat foods around the world.
+            I\'m Norika, a front-end developer based in California. I specialize
+            in building Web sites and applications for companies and
+            individuals. I love to create functional websites, and travel, eat
+            foods around the world.
           </p>
           <ul class="flex w-1/6 justify-between">
             <li class="">
@@ -48,27 +47,29 @@
         </div>
       </div>
     </section>
-    <section id="ig_photos">
-      <!-- <div v-if="cats" class="flex flex-wrap -mx-4"> -->
-      <TopImageRow />
-      <!-- </div> -->
-      <!-- <div v-else-if="error" class="w-5/6 mx-auto items-center">
+    <!-- <section id="ig_photos">
+      <div v-if="cats" class="flex flex-wrap -mx-4">
+        neko-chan
+        <TopImageRow />
+      </div>
+      <div v-else-if="error" class="w-5/6 mx-auto items-center">
         <p>There was an error fetching the images.</p>
-      </div> -->
-      <!-- <chat-msg></chat-msg> -->
-    </section>
+      </div>
+      <chat-msg></chat-msg>
+    </section> -->
     <section id="contact">
-      <p class="w-5/6 mx-auto items-center">
+      <!-- <p class="w-5/6 mx-auto items-center">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
         voluptatibus, quibusdam, quia, quos voluptatem voluptatum quod
         voluptates quas doloribus quidem natus. Quisquam voluptatibus,
         quibusdam, quia, quos voluptatem voluptatum quod voluptates quas
         doloribus quidem natus.
-      </p>
+      </p> -->
     </section>
     <section id="updates">
       <div class="w-5/6 mx-auto items-center">
-        <BlogCards />
+        <!-- <BlogCards /> -->
+        <SubgridCards />
       </div>
     </section>
   </div>
@@ -96,12 +97,6 @@ const toggleMenu = () => {
 
 // console.log(cats._value);
 </script>
-
-<style lang="scss" scoped>
-.k-content {
-  @include k-border-debug;
-}
-</style>
 
 <style scoped lang="scss">
 .top {

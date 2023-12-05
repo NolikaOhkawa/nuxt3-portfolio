@@ -1,3 +1,9 @@
+10.12.2023
+
+- @SubgridCard.vue
+- make the image black/white to color
+- cf. [obento](https://www.yaohiko.co.jp/obento/)
+
 # Nuxt 3 Minimal Starter
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
@@ -72,4 +78,3 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
     --bg-100:#0400b0;
     --bg-200:#3419c4;
     --bg-300:#5c36e3;
-

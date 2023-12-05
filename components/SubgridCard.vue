@@ -1,27 +1,10 @@
 <template>
-  <div class="flex flex-wrap -mx-4">
-    <div
-      v-for="(item, index) in contents"
-      :key="index"
-      class="max-w-xs rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700"
-    >
-      <img :src="item.img" alt="Image" class="rounded-t-lg" />
-      <div class="p-6">
-        <h5
-          class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50"
-        >
-          {{ item.title }}
-        </h5>
-        <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-          <!-- make it this shorter when the DOM is loaded -->
-          {{ item.content }}
-        </p>
-        <div class="tag_area">
-          <CardTag v-for="(tag, index) in item.tag" :key="index" :url="tag.url">
-            {{ tag.name }}
-          </CardTag>
-        </div>
-        <ButtonPrimary>Learn more</ButtonPrimary>
+  <div class="subgridCard">
+    <div class="cardDefault" v-for="item in contents" :key="item.title">
+      <div class="subgrid">
+        <img src="" alt="" class="funart" />
+        <h2 class="cardDefault_title">{{ item.title }}</h2>
+        <h3 class="cardDefault_subtitle">{{ item.content }}</h3>
       </div>
     </div>
   </div>
@@ -149,3 +132,54 @@ onMounted(() => {
   }
 });
 </script>
+
+<style lang="scss">
+.subgridCard {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.cardDefault {
+  display: grid;
+  // gap: 1rem;
+  grid-template-rows: [fun] 50px [row1] 50px [row2] auto;
+  grid-template-columns: [col1] 24ch [col2] 1fr;
+  > .subgrid {
+    grid-row: span 3;
+    display: grid;
+    grid-template-rows: subgrid;
+  }
+}
+
+// * {
+//   box-sizing: border-box;
+//   margin: 0;
+// }
+
+// html {
+//   block-size: 100%;
+//   color-scheme: dark light;
+// }
+
+// body {
+//   min-block-size: 100%;
+//   font-family: system-ui, sans-serif;
+//   display: grid;
+//   place-content: center;
+// }
+
+.cardDefault {
+  background: oklch(50% none none / 25%);
+  padding: 1rem;
+}
+
+.subgrid > h2,
+h3 {
+  padding: 1rem;
+  background: oklch(50% none none / 25%);
+}
+.subgrid > img {
+  background-color: #444;
+}
+</style>

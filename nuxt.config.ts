@@ -13,16 +13,16 @@ export default defineNuxtConfig({
       pathPrefix: false,
     },
   ],
-  css: ['~/assets/css/main.css'],
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          additionalData: '@use "@/assets/scss/_vars.scss" as *;',
-        },
-      },
-    },
-  },
+  css: ['~/assets/css/main.css', '~/assets/scss/_vars.scss'],
+  // vite: {
+  //   css: {
+  //     preprocessorOptions: {
+  //       scss: {
+  //         additionalData: '@use "@/assets/scss/_vars.scss" as *;',
+  //       },
+  //     },
+  //   },
+  // },
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/eslint-module', // https://nuxt.com/modules/eslint

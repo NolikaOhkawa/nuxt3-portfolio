@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+/*eslint-env node*/
 module.exports = {
   content: [
     './components/**/*.{js,vue,ts}',
@@ -12,4 +13,8 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  extend: {
+    /*eslint-env node*/
+    '@layer utilities': demo,
+  },
 };
